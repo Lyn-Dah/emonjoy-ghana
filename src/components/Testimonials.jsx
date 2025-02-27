@@ -1,5 +1,7 @@
-import React, { useState } from "react";
-import { motion } from "framer-motion";
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Star, Quote, ChevronLeft, ChevronRight } from "lucide-react";
+import testimonialImage from "../assets/images/testimg.jpg"; // Change this path to your actual image
 
 const testimonials = [
   {
@@ -14,61 +16,122 @@ const testimonials = [
     author: "Kwame Adu",
     rating: 4,
   },
+  {
+    id: 3,
+    text: "Eco-friendly and highly effective! My farm has never been healthier!",
+    author: "Yaw Mensah",
+    rating: 5,
+  },
 ];
 
-const flipVariants = {
-  front: { rotateY: 0 },
-  back: { rotateY: 180 },
-};
-
 export default function TestimonialSection() {
-  const [flipped, setFlipped] = useState(Array(testimonials.length).fill(false));
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-  const toggleFlip = (index) => {
-    setFlipped((prev) => {
-      const newFlipped = [...prev];
-      newFlipped[index] = !newFlipped[index];
-      return newFlipped;
-    });
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const nextTestimonial = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
+  };
+
+  const prevTestimonial = () => {
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + testimonials.length) % testimonials.length);
   };
 
   return (
-    <section className="flex flex-wrap justify-center gap-6 py-12 bg-gray-100">
-      {testimonials.map((testimonial, index) => (
-        <div key={testimonial.id} className="relative w-80 h-64 perspective">
-          <motion.div
-            className="absolute w-full h-full rounded-xl shadow-lg bg-white p-6 flex flex-col justify-center items-center cursor-pointer"
-            initial="front"
-            animate={flipped[index] ? "back" : "front"}
-            variants={flipVariants}
-            transition={{ duration: 0.6 }}
-            onClick={() => toggleFlip(index)}
-            style={{ backfaceVisibility: "hidden" }}
-          >
-            <h3 className="text-lg font-semibold">TESTIMONIAL</h3>
-            <div className="flex text-yellow-400 text-xl my-2">
-              {"★".repeat(testimonial.rating)}
-            </div>
-            <p className="text-gray-600 text-center">{testimonial.text}</p>
-            <p className="mt-4 font-bold">— {testimonial.author}</p>
-          </motion.div>
+    <section className="relative flex flex-col lg:flex-row items-center justify-center min-h-[80vh] py-12 px-6 bg-white gap-12">
+      
+      {/* IMAGE SECTION */}
+      <motion.div 
+        className="w-full lg:w-1/2 flex justify-center"
+        initial={{ opacity: 0, x: -50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        <img src={testimonialImage} alt="Happy farmer" className="w-full max-w-md rounded-lg shadow-lg object-cover" />
+      </motion.div>
 
-          {/* Back Side */}
-          <motion.div
-            className="absolute w-full h-full rounded-xl shadow-lg bg-green-500 text-white p-6 flex flex-col justify-center items-center cursor-pointer"
-            initial="back"
-            animate={flipped[index] ? "front" : "back"}
-            variants={flipVariants}
-            transition={{ duration: 0.6 }}
-            onClick={() => toggleFlip(index)}
-            style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)" }}
-          >
-            <h3 className="text-lg font-semibold">More About {testimonial.author}</h3>
-            <p className="text-center mt-4">"I can feel good about what I'm putting on my crops and into the environment. Highly recommended!"</p>
-            <p className="mt-4 italic">Tap to flip back</p>
-          </motion.div>
+      {/* TESTIMONIALS SECTION */}
+      <div className="w-full lg:w-1/2 flex flex-col items-center text-center">
+        <motion.h2
+          className="text-3xl font-bold text-gray-900 mb-8"
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
+          What Our Farmers Say
+        </motion.h2>
+
+        <div className="relative w-full max-w-lg">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={testimonials[currentIndex].id}
+              className="absolute w-full p-8 rounded-lg shadow-lg bg-white border border-gray-200 flex flex-col items-center text-center"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+            >
+              <motion.div
+                className="mb-4"
+                initial={{ scale: 0.5, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 0.4, delay: 0.2, type: "spring", stiffness: 120 }}
+              >
+                <Quote className="text-green-500 w-10 h-10" />
+              </motion.div>
+              <p className="text-lg text-gray-700 italic leading-relaxed">"{testimonials[currentIndex].text}"</p>
+              <div className="flex text-yellow-500 text-lg my-3">
+                {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
+                  <motion.span
+                    key={i}
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ delay: i * 0.15, type: "spring", stiffness: 120 }}
+                  >
+                    <Star className="w-5 h-5" />
+                  </motion.span>
+                ))}
+              </div>
+              <p className="text-gray-900 font-semibold mt-2">— {testimonials[currentIndex].author}</p>
+            </motion.div>
+          </AnimatePresence>
         </div>
-      ))}
+
+        {/* Navigation Arrows */}
+        <div className="flex items-center gap-4 mt-8">
+          <motion.button
+            className="p-3 rounded-full bg-gray-200 hover:bg-gray-400 transition-all shadow-md"
+            onClick={prevTestimonial}
+            whileHover={{ scale: 1.1 }}
+          >
+            <ChevronLeft className="w-5 h-5 text-gray-700" />
+          </motion.button>
+          <motion.button
+            className="p-3 rounded-full bg-gray-200 hover:bg-gray-400 transition-all shadow-md"
+            onClick={nextTestimonial}
+            whileHover={{ scale: 1.1 }}
+          >
+            <ChevronRight className="w-5 h-5 text-gray-700" />
+          </motion.button>
+        </div>
+
+        {/* Dots Indicator */}
+        <div className="flex mt-4 gap-2">
+          {testimonials.map((_, index) => (
+            <motion.button
+              key={index}
+              className={`w-3 h-3 rounded-full ${index === currentIndex ? "bg-green-500" : "bg-gray-300"}`}
+              onClick={() => setCurrentIndex(index)}
+              whileHover={{ scale: 1.2 }}
+            />
+          ))}
+        </div>
+      </div>
     </section>
   );
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { CheckCircle, Leaf, ShieldCheck, Users } from "lucide-react";
-import productImage from "../assets/images/product4.jpg";
+import productImage from "../assets/images/product5.jpg";
 
 export default function AboutSection() {
   return (

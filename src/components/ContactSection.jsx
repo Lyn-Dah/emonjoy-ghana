@@ -4,7 +4,7 @@ import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaFacebook, FaTwitter, FaInstagram
 
 export default function ContactSection() {
   return (
-    <section className="bg-gray-100 py-16">
+    <section className="bg-gray-100 py-20 mt-16 ">
       <div className="container mx-auto px-6 lg:px-20">
         <motion.div
           className="grid grid-cols-1 md:grid-cols-2 gap-12 bg-white shadow-xl rounded-lg p-8"

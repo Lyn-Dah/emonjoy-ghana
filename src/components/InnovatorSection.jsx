@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Lightbulb, Leaf, Users } from "lucide-react";
 import innovator1 from "../assets/images/simon.jpg";
 import innovator2 from "../assets/images/joy.jpg";
 import innovator3 from "../assets/images/enoch.jpg";
@@ -27,40 +28,52 @@ const innovators = [
 
 export default function InnovatorSection() {
   return (
-    <section id="innovator" className="bg-gray-100 py-16">
-      <div className="container mx-auto text-center px-6">
+    <section id="innovator" className="bg-gray-50 py-20 px-6">
+      <div className="container mx-auto text-center">
         {/* Section Heading */}
         <motion.h2
-          className="text-3xl md:text-4xl font-bold mb-6 text-gray-800"
+          className="text-4xl md:text-5xl font-bold text-gray-800 mb-6 relative inline-block"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
           Meet Our Innovators
-          
+          <span className="absolute left-0 bottom-0 w-full h-1 bg-green-500 rounded-lg"></span>
         </motion.h2>
 
         {/* Write-up Container */}
-        <motion.div
-          className="bg-white rounded-lg shadow-md p-6 sm:p-8 max-w-3xl mx-auto mb-10 border-l-4 border-green-500"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.5 }}
-        >
-          <p className="text-gray-700 text-base sm:text-lg leading-relaxed">
-            At <span className="font-semibold text-green-700">Emonjoy Ghana</span>, our team is driven by a shared passion for sustainability and innovation. 
-            We bring together expertise in research, agriculture, and technology to create eco-friendly solutions that empower farmers and protect the environment. 
-            With a commitment to excellence, we strive to revolutionize modern farming by making organic and effective pesticides accessible to all. 
-            <span className="block mt-2 font-medium text-gray-900">Meet the minds behind our mission!</span>
-          </p>
-        </motion.div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center max-w-5xl mx-auto mt-6">
+          <motion.div
+            className="bg-white p-6 rounded-xl shadow-lg border-l-4 border-green-500 flex items-center space-x-4"
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, delay: 0.5 }}
+          >
+            <Lightbulb className="text-green-500 w-10 h-10" />
+            <p className="text-gray-700 text-lg leading-relaxed">
+              At <span className="font-semibold text-green-700">Emonjoy Ghana</span>, we combine expertise in agriculture, technology, and research to develop eco-friendly solutions that empower farmers.
+            </p>
+          </motion.div>
+          
+          <motion.div
+            className="bg-white p-6 rounded-xl shadow-lg border-l-4 border-green-500 flex items-center space-x-4"
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, delay: 0.7 }}
+          >
+            <Leaf className="text-green-500 w-10 h-10" />
+            <p className="text-gray-700 text-lg leading-relaxed">
+              We strive to make sustainable farming accessible, ensuring healthier crops and a safer environment with organic, effective pesticides.
+            </p>
+          </motion.div>
+        </div>
 
         {/* Innovator Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-12">
           {innovators.map((innovator, index) => (
             <motion.div
               key={index}
-              className="bg-white shadow-lg rounded-lg overflow-hidden p-6 transform transition-all duration-300 hover:scale-105"
+              className="bg-white shadow-xl rounded-lg overflow-hidden p-6 transform transition-all duration-300 hover:scale-105"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.3 }}
