@@ -1,27 +1,106 @@
-export default function Footer() {
-    return (
-      <footer className="bg-gray-800 text-white py-8">
-        <div className="container mx-auto text-center px-4">
-          <div className="mb-6">
-            <h3 className="text-xl font-bold">Alien Seild</h3>
-            <p className="text-gray-400 mt-2">
-              A paragraph in text that can understand this document.
+import React from "react";
+import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
+
+function Footer() {
+  return (
+    <footer className="bg-gray-900 text-white py-12">
+      <div className="container mx-auto px-6 lg:px-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
+          
+          {/* Brand Info */}
+          <div>
+            <h3 className="text-3xl font-bold tracking-wide text-white">
+              EMONJOY GHANA
+            </h3>
+            <p className="text-gray-400 mt-3 leading-relaxed">
+              Innovative solutions for a better future.
+            </p>
+            <p className="text-gray-500 mt-2">
+              &copy; {new Date().getFullYear()} Emonjoy Ghana. All rights reserved.
             </p>
           </div>
-          <div className="mb-6">
-            <h4 className="text-lg font-bold mb-2">Quick Links</h4>
-            <ul className="space-y-2">
-              <li><a href="#about" className="hover:text-gray-400">About</a></li>
-              <li><a href="#services" className="hover:text-gray-400">Services</a></li>
-              <li><a href="#contact" className="hover:text-gray-400">Contact</a></li>
-            </ul>
+
+          {/* Quick Links */}
+          <div>
+            <h4 className="text-2xl font-semibold text-white">Quick Links</h4>
+            <nav className="mt-4 space-y-2">
+              {[
+                { name: "Home", id: "home" },
+                { name: "About Us", id: "about" }, 
+                { name: "Products", id: "products" }, 
+                { name: "Testimonials", id: "testimonials" }, 
+                { name: "Contact", id: "contact" }
+              ].map((link) => (
+                <a
+                  key={link.id}
+                  href={`#${link.id}`}
+                  className="block text-gray-400 hover:text-white transition-colors duration-300"
+                >
+                  {link.name}
+                </a>
+              ))}
+            </nav>
           </div>
-          <div className="text-gray-400">
-            <p>info@info.com</p>
-            <p>+233 123 456 789</p>
-            <p>© 2025 All rights reserved.</p>
+
+          {/* Contact Info & Social Media */}
+          <div>
+            <h4 className="text-2xl font-semibold text-white">Contact Us</h4>
+            <p className="text-gray-400 mt-2">
+              Email:{" "}
+              <a
+                href="mailto:info@emonjoyghana.com"
+                className="text-green-600 hover:underline"
+              >
+                info@emonjoyghana.com
+              </a>
+            </p>
+            <p className="text-gray-400 mt-2">
+              Phone:{" "}
+              <a
+                href="tel:+233123456789"
+                className="text-green-600 hover:underline"
+              >
+                +233 123 456 789
+              </a>
+            </p>
+
+            {/* Social Media */}
+            <div className="flex justify-center md:justify-start mt-4 space-x-6">
+              <a
+                href="https://twitter.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-blue-400 transition-transform transform hover:scale-110"
+              >
+                <FaTwitter size={24} />
+              </a>
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-blue-600 transition-transform transform hover:scale-110"
+              >
+                <FaFacebookF size={24} />
+              </a>
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-pink-500 transition-transform transform hover:scale-110"
+              >
+                <FaInstagram size={24} />
+              </a>
+            </div>
           </div>
         </div>
-      </footer>
-    );
-  }
+
+        {/* Bottom Bar */}
+        <div className="mt-12 border-t border-gray-700 pt-4 text-center text-gray-500 text-sm">
+          Designed with ❤️ by Emonjoy Ghana Team
+        </div>
+      </div>
+    </footer>
+  );
+}
+
+export default Footer;
