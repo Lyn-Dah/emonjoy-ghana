@@ -12,28 +12,28 @@ const products = [
     image: productImage1,
     name: "Organic Pesticide A",
     price: "20ghc",
-    link: "https://paystack.shop/emonjoy-ghana",
+    link: "https://paystack.com/buy/organic-pesticide-mjgjmp",
   },
   {
     id: 2,
     image: productImage2,
     name: "Eco-Friendly Pest Repellent",
     price: "30ghc",
-    link: "https://paystack.shop/emonjoy-ghana",
+    link: "https://paystack.com/buy/eco-friendly-pest-repellent-fzrdxc",
   },
   {
     id: 3,
     image: productImage3,
     name: "Biodegradable Insect Killer",
     price: "25ghc",
-    link: "https://paystack.shop/emonjoy-ghana",
+    link: "https://paystack.com/buy/biodegradable-insect-killer-pebydx",
   },
   {
     id: 4,
     image: productImage4,
     name: "Natural Plant Protector",
     price: "30ghc",
-    link: "https://paystack.shop/emonjoy-ghana",
+    link: "https://paystack.com/buy/natural-plant-protector-pdbocn",
   },
 ];
 
