@@ -1,3 +1,4 @@
+
 import Navbar from "./components/Navbar";
 import HeroSection from "./components/HeroSection";
 import AboutSection from "./components/AboutSection";
@@ -10,11 +11,21 @@ export default function App() {
   return (
     <div>
       <Navbar />
-      <HeroSection />
-      <AboutSection />
-      <InnovatorSection />
-      <Testimonials />
-      <ContactSection />
+      <section id="home">
+        <HeroSection />
+      </section>
+      <section id="product"> 
+        <AboutSection/> 
+      </section>
+      <section id="about">
+        <InnovatorSection />
+      </section>
+      <section id="testimonials">
+        <Testimonials />
+      </section>
+      <section id="contact">
+        <ContactSection />
+      </section>
       <Footer />
     </div>
   );

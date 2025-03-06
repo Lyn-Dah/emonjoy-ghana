@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-scroll"; // Ensure react-scroll is installed
+import { Link } from "react-scroll"; 
 import logo from "../assets/images/logo.jpg";
 
 export default function Navbar() {
@@ -90,3 +90,5 @@ export default function Navbar() {
     </nav>
   );
 }
+
+

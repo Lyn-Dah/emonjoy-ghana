@@ -1,5 +1,5 @@
 import React from "react";
-import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
+import { FaFacebookF, FaTwitter, FaInstagram, FaWhatsapp} from "react-icons/fa";
 
 function Footer() {
   return (
@@ -13,7 +13,7 @@ function Footer() {
               EMONJOY GHANA
             </h3>
             <p className="text-gray-400 mt-3 leading-relaxed">
-              Innovative solutions for a better future.
+            Revolutionizing Sustainable Farming with Organic Pesticides.
             </p>
             <p className="text-gray-500 mt-2">
               &copy; {new Date().getFullYear()} Emonjoy Ghana. All rights reserved.
@@ -27,7 +27,7 @@ function Footer() {
               {[
                 { name: "Home", id: "home" },
                 { name: "About Us", id: "about" }, 
-                { name: "Products", id: "products" }, 
+                { name: " Our Product", id: "product" }, 
                 { name: "Testimonials", id: "testimonials" }, 
                 { name: "Contact", id: "contact" }
               ].map((link) => (
@@ -82,6 +82,14 @@ function Footer() {
               >
                 <FaFacebookF size={24} />
               </a>
+              <a
+        href="https://wa.me/233123456789" 
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition"
+      >
+        <FaWhatsapp className="text-2xl" />
+      </a>
               <a
                 href="https://instagram.com"
                 target="_blank"
