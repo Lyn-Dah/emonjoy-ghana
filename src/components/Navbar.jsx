@@ -37,6 +37,7 @@ export default function Navbar() {
                 duration={800}
                 spy={true}
                 offset={-70}
+                activeClass="text-green-500 font-bold border-b-2 border-green-500"
                 className="cursor-pointer hover:text-gray-400 transition-colors duration-300"
               >
                 {item.name}
@@ -77,6 +78,7 @@ export default function Navbar() {
                   duration={800}
                   spy={true}
                   offset={-70}
+                  activeClass="text-green-500 font-bold border-b-2 border-green-500"
                   onClick={closeMenu} // Close menu on click
                   className="block cursor-pointer text-white hover:text-gray-400 transition-colors duration-300"
                 >
@@ -90,5 +92,3 @@ export default function Navbar() {
     </nav>
   );
 }
-
-

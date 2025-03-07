@@ -32,15 +32,13 @@ export default function InnovatorSection() {
       <div className="container mx-auto text-center">
         {/* Section Heading */}
         <motion.h2
-          className="text-4xl md:text-5xl font-bold text-gray-800 mb-6 relative inline-block"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-        >
-          Meet Our Innovators
-          <span className="absolute left-0 bottom-0 w-full h-1 bg-green-500 rounded-lg"></span>
-        </motion.h2>
-
+                  className="text-4xl font-extrabold text-gray-800 mb-6"
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, ease: "easeOut" }}
+                >
+                🌿Meet Our Innovators
+                </motion.h2>
         {/* Write-up Container */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center max-w-5xl mx-auto mt-6">
           <motion.div
