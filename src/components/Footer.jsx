@@ -1,5 +1,5 @@
 import React from "react";
-import { FaFacebookF, FaTwitter, FaInstagram, FaWhatsapp} from "react-icons/fa";
+import { FaFacebookF, FaLinkedin, FaInstagram, FaWhatsapp} from "react-icons/fa";
 
 function Footer() {
   return (
@@ -51,7 +51,7 @@ function Footer() {
                 href="mailto:info@emonjoyghana.com"
                 className="text-green-600 hover:underline"
               >
-                info@emonjoyghana.com
+                emonjoygh@gmail.com
               </a>
             </p>
             <p className="text-gray-400 mt-2">
@@ -60,22 +60,22 @@ function Footer() {
                 href="tel:+233123456789"
                 className="text-green-600 hover:underline"
               >
-                +233 123 456 789
+                +233241534618
               </a>
             </p>
 
             {/* Social Media */}
             <div className="flex justify-center md:justify-start mt-4 space-x-6">
               <a
-                href="https://twitter.com"
+                href="https://www.linkedin.com/in/emonjoyghana/?originalSubdomain=gh"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-blue-400 transition-transform transform hover:scale-110"
               >
-                <FaTwitter size={24} />
+                <FaLinkedin size={24} />
               </a>
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/profile.php?id=61568111274100"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-blue-600 transition-transform transform hover:scale-110"
@@ -83,7 +83,7 @@ function Footer() {
                 <FaFacebookF size={24} />
               </a>
               <a
-        href="https://wa.me/233123456789" 
+        href="https://wa.me/233241534618" 
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition"
@@ -91,7 +91,7 @@ function Footer() {
         <FaWhatsapp className="text-2xl" />
       </a>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/emonjoyghana/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-pink-500 transition-transform transform hover:scale-110"
