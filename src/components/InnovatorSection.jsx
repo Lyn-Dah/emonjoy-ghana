@@ -8,21 +8,21 @@ import innovator3 from "../assets/images/enoch.jpg";
 const innovators = [
   {
     name: "Simon Etornam Felitse",
-    role: "Innovator & Team Lead",
+    role: "  IT & Operations Lead",
     image: innovator1,
-    bio: "A visionary leader committed to revolutionizing sustainable farming in Ghana."
+    bio: "A visionary leader  with Computer Science background, committed to revolutionizing sustainable farming in Ghana."
   },
   {
     name: "Agnes Joy Aryee",
-    role: "Innovator & Researcher",
+    role: "Marketing and Sales Lead ",
     image: innovator2,
-    bio: "Bringing cutting-edge research to develop eco-friendly and effective pesticides."
+    bio: "A Background in Agribusiness, passionate about creating awareness and driving sales."
   },
   {
-    name: "Enoch Alale",
-    role: "Innovator & Researcher",
+    name: "Enoch Mbawin Alale",
+    role: "Team Lead",
     image: innovator3,
-    bio: "Ensuring smooth operations and impactful execution of our sustainable solutions."
+    bio: " An Industrial Chemistry Background. Ensuring smooth operations and impactful execution of our sustainable solutions."
   }
 ];
 
@@ -49,7 +49,7 @@ export default function InnovatorSection() {
           >
             <Lightbulb className="text-green-500 w-10 h-10" />
             <p className="text-gray-700 text-lg leading-relaxed">
-              At <span className="font-semibold text-green-700">Emonjoy Ghana</span>, we combine expertise in agriculture, technology, and research to develop eco-friendly solutions that empower farmers.
+              At <span className="font-semibold text-green-700">EMONJOY Ghana</span>, we combine expertise in agriculture, technology, and research to develop eco-friendly solutions that empower farmers.
             </p>
           </motion.div>
           

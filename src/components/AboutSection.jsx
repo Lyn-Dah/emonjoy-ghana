@@ -10,29 +10,29 @@ const products = [
   {
     id: 1,
     image: productImage1,
-    name: "Organic Pesticide A",
-    price: "20ghc",
+    name: "250ml",
+    price: "120ghc",
     link: "https://paystack.com/buy/organic-pesticide-mjgjmp",
   },
   {
     id: 2,
     image: productImage2,
-    name: "Eco-Friendly Pest Repellent",
-    price: "30ghc",
+    name: "500ml",
+    price: "230ghc",
     link: "https://paystack.com/buy/eco-friendly-pest-repellent-fzrdxc",
   },
   {
     id: 3,
     image: productImage3,
-    name: "Biodegradable Insect Killer",
-    price: "25ghc",
+    name: "1 litre",
+    price: "500ghc",
     link: "https://paystack.com/buy/biodegradable-insect-killer-pebydx",
   },
   {
     id: 4,
     image: productImage4,
-    name: "Natural Plant Protector",
-    price: "30ghc",
+    name: "1.5 litre",
+    price: "600ghc",
     link: "https://paystack.com/buy/natural-plant-protector-pdbocn",
   },
 ];
@@ -51,8 +51,9 @@ export default function ProductSection() {
           🌿 Our Premium Organic Products
         </motion.h2>
         <p className="text-gray-600 text-lg max-w-2xl mx-auto mb-12">
-          Our products are 100% organic, safe for your plants, and highly effective in keeping pests away. 
-          Enjoy a chemical-free farming experience while protecting the environment!
+        Our products are 100% Organic, Safe for your health and your plants. 
+        Also highly effective in keeping pests and diseases away from your crops. 
+        Enjoy Chemical-free farming experience while protecting the environment and human health.
         </p>
 
         {/* Product Grid */}
